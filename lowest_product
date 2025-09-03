@@ -1,0 +1,17 @@
+def lowest_product(num):
+    if len(num) < 4:
+        return "Number is too small"
+    
+    string_number = str(num)
+    lowest_product = 9999
+    
+    for i in range(len(string_number) - 3):
+        four_digits = string_number[i:i+4]
+        product = 1
+        
+        for digit in four_digits:
+            product *= int(digit)
+        if product < lowest_product:
+            lowest_product = product
+    
+    return lowest_product
