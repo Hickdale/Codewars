@@ -1,0 +1,17 @@
+def pig_latin(s):
+    word = s
+    
+    if not word or not word.isalpha():
+        return None
+    
+    vowels = ('a','e','i','o','u','A','E','I','O','U')
+    word = word.lower()
+        
+    if word[0] in vowels:
+        return word + "way"
+    
+    for i, char in enumerate(word):
+        if char in vowels:
+            return word[i:] + word[:i] + "ay"
+        
+    return word + "ay"
